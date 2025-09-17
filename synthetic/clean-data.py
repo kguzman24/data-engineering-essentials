@@ -18,7 +18,14 @@ def clean_parquet():
             SELECT * FROM read_parquet('{input_file}');
         """)
 
-        # More cleaning steps ...
+        """ More cleaning steps
+        1. Add age column and populate it (see transform/README.md)
+        2. Delete rows with NULL for the 'score' column
+        3. Deduplicate the data set (see transform/CLEANING.md)
+        4. Max age? Min age? How many over 100?
+        5. How many records are left?
+        """
+
 
     except Exception as e:
         print(f"An error occurred: {e}")
